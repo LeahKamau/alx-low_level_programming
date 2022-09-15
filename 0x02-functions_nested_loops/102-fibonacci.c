@@ -13,7 +13,7 @@ int main(void)
 	n1 = 1;
 	n2 = 2;
 	printf("%ld, %ld", n1, n2);
-	for (c = 3; c <= 50; c++)
+	for (i = 3; i <= 50; i++)
 	{
 		fn = n1 + n2;
 		printf(", %ld", fn);
