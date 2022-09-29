@@ -3,7 +3,7 @@
 /**
  * _puts_recursion - function to print string
  * with new line using recursion
- * @s - string parameter
+ * @s: string parameter
  */
 void _puts_recursion(char *s)
 {
