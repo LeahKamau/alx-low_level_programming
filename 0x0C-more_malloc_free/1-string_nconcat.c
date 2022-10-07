@@ -1,14 +1,29 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdlib.h>
+/**
+ * _strlen - calculate and return string length
+ * @string: string
+ * Return: string length
+ */
+int _strlen(char *string)
+{
+	int i;
+
+	for (i = 0; string[i] != '\0'; i++)
+		;
+	return (i);
+}
 /**
  * string_nconcat - concatenates two strings
  * @s1: first string
  * @s2: second string
+ * @s2: second string
  * @n: amount of bytes
- *
  * Return: pointer to the allocated memory
  * if malloc fails, status value is equal to 98
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
