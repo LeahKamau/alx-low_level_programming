@@ -49,3 +49,8 @@
     - *: multiplication
     - /: division
     - %: modulo
+### 4. Most hackers are young because young people tend to be adaptable.
+
+    Write a program that prints the opcodes of its own main function.
+
+    - Usage: ./main number_of_bytes
