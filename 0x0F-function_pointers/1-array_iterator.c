@@ -8,6 +8,12 @@
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-if (array == NULL || action == NUL)
+int i = 0; 
+if (array == NULL || action == NULL)
 return;
+while (i != size)
+{
+action(*array[i]); /* Action pointer to a function that receives a parameter i.e func(array)*/
+i++;
+}
 }
