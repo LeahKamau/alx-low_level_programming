@@ -4,6 +4,8 @@
  * int_index - Function that searches for an integer
  * @array: Array to search for int.
  * @size: size of array
+ * Return: returns index of first element for 
+ *  which the cmp function does not return 0 else (-1)
  */
 int int_index(int *array, int size, int (*cmp)(int)) /*Int param in cmp is what is being searched*/
 {
