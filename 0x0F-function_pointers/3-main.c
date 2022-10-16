@@ -16,11 +16,11 @@ exit(98);
 num1 = atoi(argv[1]);
 operand = argv[2];
 num2 = atoi(argv[3]);
-if (operand != '/' || '*' || '+' || '-' || '%'){
+if (*operand != '/' || '*' || '+' || '-' || '%'){
 printf("Error\n");
 exit(99);
 } 
-if ((operand == '/' && num2 == 0) || operand == '%' && num2 == 0){
+if ((*operand == '/' && num2 == 0) || *operand == '%' && num2 == 0){
 printf("Error\n");
 exit(100);
 } 
