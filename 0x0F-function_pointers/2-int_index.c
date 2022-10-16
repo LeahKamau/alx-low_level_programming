@@ -11,7 +11,7 @@ int int_index(int *array, int size, int (*cmp)(int)) /*Int param in cmp is what 
 {
 int i; /*Will be used in for loop to iterate array*/
 if (array == NULL || cmp == NULL)
-return;
+return (-1);
 if (size <= 0)
 {
 return (-1);
