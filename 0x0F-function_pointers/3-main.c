@@ -7,6 +7,8 @@
  * Return: return Success (0)
  */
 int main(int argc, char *argv[]){
+int num1, num2;
+char *operand;
 if (argc != 4){
 printf("Error\n");
 exit(98);
