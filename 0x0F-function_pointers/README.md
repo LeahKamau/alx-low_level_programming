@@ -43,3 +43,9 @@ Write a function that searches for an integer.
 
 Write a program that performs simple operations.
 
+operator is one of the following:
+- +: addition
+- -: subtraction
+- *: multiplication
+- /: division
+- %: modulo
