@@ -7,12 +7,13 @@
  * @action: pointer to the function to use
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
-{ 
+{
+int i = 0;
 if (array == NULL || action == NULL)
 return;
-while (size-- != 0)
+while (i != size)
 {
-action(*array); /* Action pointer to a function that receives a parameter i.e func(array)*/
-array++;
+action(*array[i]); /* Action pointer to a function that receives a parameter i.e func(array)*/
+i++;
 }
 }
