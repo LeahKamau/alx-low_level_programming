@@ -12,6 +12,10 @@ int int_index(int *array, int size, int (*cmp)(int)) /*Int param in cmp is what 
 int i; /*Will be used in for loop to iterate array*/
 if (array == NULL || cmp == NULL)
 return;
+if (size <= 0)
+{
+return (-1);
+}
 for (i = 0; i < size; i++) /*array[size] - i to iterate to max-size of array (size)*/
 {
 if (cmp(array[i]) != 0)
