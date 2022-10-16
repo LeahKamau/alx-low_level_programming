@@ -8,7 +8,7 @@
 */
 void print_name(char *name, void (*f)(char *))
 {
-if(name == NULL || f == NULL) /* This checks whether a name is provided or the pointer f is receivinga func*/
+if(name == NULL || f == NULL) /* Checks name or f is TRUE*/
 {
 return;
 }
