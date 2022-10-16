@@ -1,11 +1,12 @@
 #include "3-calc.h"
 
 /**
- *
- *
- *
+ * main -  program that performs simple operations.
+ * @argc: Number of arguments provided 
+ * @argv: The arguments provided in an array
+ * Return: return Success (0)
  */
-int main(int argc, char argv[]){
+int main(int argc, char *argv[]){
 if (argc != 4){
 printf("Error\n")
 exit(98);
@@ -21,5 +22,6 @@ if ((operand == '/' && num2 == 0) || operand == '%' && num2 == 0){
 printf("Error\n")
 exit(100);
 } 
-get_op_func(operand))(num1, num2)
+printf("%d\n",get_op_func(operand))(num1, num2))
+return (0);
 }
