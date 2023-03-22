@@ -2,17 +2,23 @@
 
 /**
  * array_iterator - executes a function given as a parameter
- * @array: existing array.
- * @size: size of array.
- * @action: pointer to the function to use
+ * @array: array
+ * @size: size of the array
+ * @action: function pointer to called function
+ * Return: 0 success
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-if (array == NULL || action == NULL)
-return;
-while (size-- != 0)
-{
-action(*array); /* function receiveing param func(array)*/
-array++;
-}
+	size_t i;
+
+	if (size == 0 || action == NULL)
+		return;
+
+	for (i = 0; i < size; i++)
+	{
+		if (array == NULL)
+			return;
+
+		action(array[i]);
+	}
 }
