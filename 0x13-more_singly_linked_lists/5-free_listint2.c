@@ -8,11 +8,17 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *tmp;
+	listint_t *tmp, *curr;
 
-	while ((tmp = *head) != NULL)
+	if (head != NULL)
 	{
-		*head = (*head)->next;
-		free(tmp);
+		curr = *head;
+
+		while ((tmp = curr) != NULL)
+		{
+			curr = curr->next;
+			free(tmp);
+		}
+		*head = NULL;
 	}
 }
