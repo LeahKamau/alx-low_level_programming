@@ -1,28 +1,26 @@
-#include "3-main.h"
+#include "3-calc.h"
 
 /**
- * get_op_func - function pointer that selects correct function to perform.
- * @s: operator passed as argument
- * 
+ * get_op_func - Calls function based on the operator
+ * @s: operator
+ * Return: function to be called
  */
 int (*get_op_func(char *s))(int, int)
 {
-    /* Struct ops accepts 1. operand 
-                          2. Pointer func
-    */
-        op_t ops[] = {
-        {"+", op_add},
-        {"-", op_sub},
-        {"*", op_mul},
-        {"/", op_div},
-        {"%", op_mod},
-        {NULL, NULL}
-    };
-    int i = 0;
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+		};
+	int i;
 
-    while (ops[i].op != NULL && *(ops[i].op) != *s)
-	i++;
+	i = 0;
 
-	return (ops[i].f);
+	while (ops[i].op != NULL && *(ops[i].op) != *s)
+		i++;
 
+	return ((ops[i]).f);
 }
