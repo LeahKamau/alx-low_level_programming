@@ -16,23 +16,23 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
 	}
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 
-	if ((*operator != '+' && *operator != '-' && *operator != '*' 
-				&& operator != '/' && operator != '%') || operator[1] != '\0')
+	if ((*operator != '+' && *operator != '-' && *operator != '*'
+		&& *operator != '/' && *operator != '%') || operator[1] != '\0')
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(99);
 	}
 
 	if ((*operator == '%' && num2 == 0) || (*operator == '/' && num2 == 0))
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(100);
 	}
 
