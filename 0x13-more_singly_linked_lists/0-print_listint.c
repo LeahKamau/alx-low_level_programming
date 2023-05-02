@@ -1,4 +1,4 @@
-#include "main.h"
+#include "lists.h"
 
 /**
  * print_listint - prints elements of listint_t
