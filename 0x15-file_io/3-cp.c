@@ -11,7 +11,7 @@
 int main(int ac, char *argv[])
 {
 	int fptr_frm, fptr_to;
-	ssize_t rbytes;
+	ssize_t rbytes, wbytes;
 	char buffer[1024];
 
 	if (ac != 3)
@@ -29,7 +29,7 @@ int main(int ac, char *argv[])
 		exit(98);
 	}
 
-	fptr_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fptr_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 
 	if (fptr_to == -1)
 	{
@@ -39,7 +39,18 @@ int main(int ac, char *argv[])
 	}
 
 	while ((rbytes = read(fptr_frm, buffer, sizeof(buffer))) > 0)
-		write(fptr_to, buffer, rbytes);
+		wbytes = write(fptr_to, buffer, rbytes);
+	if (rbytes == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	if (wbytes == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
+
 
 	if (close(fptr_frm) == -1)
 	{
