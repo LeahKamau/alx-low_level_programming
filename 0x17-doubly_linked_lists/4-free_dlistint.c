@@ -3,7 +3,7 @@
 /**
  * free_dlistint - frees dlistint_t
  * @head: points to first node
- * 
+ *
  * Return: no return
  */
 void free_dlistint(dlistint_t *head)
@@ -14,7 +14,7 @@ void free_dlistint(dlistint_t *head)
 		while (head->prev != NULL)
 			head = head->prev;
 
-	while((temp = head) != NULL)
+	while ((temp = head) != NULL)
 	{
 		head = head->next;
 		free(temp);
