@@ -1,6 +1,13 @@
 #include "lists.h"
 
 /**
+ * insert_dnodeint_at_index - inserts node
+ * at idx
+ * @h: points to first node
+ * @idx: index
+ * @n: element value
+ *
+ * Return: new node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -26,6 +33,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			temp = temp->next;
 			i++;
 		}
+		if (temp == NULL)
+			return (NULL);
+
 		if (temp->next == NULL)
 			new = add_dnodeint_end(h, n);
 		else
