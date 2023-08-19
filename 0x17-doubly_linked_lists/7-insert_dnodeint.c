@@ -1,31 +1,24 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - inserts node
- * at idx
+ * insert_dnodeint_at_index - inserts node at idx
  * @h: points to first node
  * @idx: index
  * @n: element value
- *
  * Return: new node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new, *temp;
+	dlistint_t *new = NULL, *temp = *h;
 	unsigned int i = 0;
-
-	new = NULL;
-	temp = *h;
 
 	if (temp != NULL)
 	{
 		while (temp->prev != NULL)
 			temp = temp->prev;
 	}
-
 	if (idx == 0)
 		new = add_dnodeint(h, n);
-
 	else
 	{
 		while (i != idx - 1 && temp != NULL)
@@ -35,7 +28,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		}
 		if (temp == NULL)
 			return (NULL);
-
 		if (temp->next == NULL)
 			new = add_dnodeint_end(h, n);
 		else
@@ -50,6 +42,5 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			temp->next = new;
 		}
 	}
-
 	return (new);
 }
